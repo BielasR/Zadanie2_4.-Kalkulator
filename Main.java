@@ -7,39 +7,34 @@ class Main
   Scanner liczba1 = new Scanner(System.in);
   Scanner liczba2 = new Scanner(System.in);
   Scanner wybór = new Scanner(System.in);
-  System.out.println("Wybierz liczbę aby wykonać odpowiedznie działanie\n 1.Suma\n 2.Różnica\n 3.Iloczyn\n 4.Iloraz\n");
+  System.out.println("Wybierz liczbę aby wykonać odpowiedznie działanie\n 1.Pole prostokąta\n 2.Pole trójkąta\n");
   int w = wybór.nextInt();
-  System.out.println("Podaj pierwszą liczbę:");
-  float l1 = liczba1.nextFloat();
-  System.out.println("Podaj drugą liczbę:");
-  float l2 = liczba2.nextFloat();
     switch(w)
       {
         case 1:   
-          float suma = l1 + l2;
-          System.out.println("Suma = " + suma);
+          System.out.println("Podaj pierwszy bok:");
+          float l1 = liczba1.nextFloat();
+          System.out.println("Podaj drugi bok:");
+          float l2 = liczba2.nextFloat();
+          float poleP = l1 * l2;
+          System.out.println("Pole prostokąta = " + poleP);
           break;
         case 2:
-          float różnica = l1 - l2;
-          System.out.println("Różnica = " + różnica);
-          break;
-        case 3:
-          float iloczyn = l1 * l2;
-          System.out.println("Iloczyn = " + iloczyn);
-          break;
-        case 4:
-          if(l2 == 0.0)
+          System.out.println("Podaj pierwszy bok:");
+          double a = liczba1.nextDouble();
+          System.out.println("Podaj drugi bok:");
+          double b = liczba2.nextDouble();
+          System.out.println("Podaj przeciwprostokątną:");
+          double c = liczba2.nextDouble();
+          if(a + b >c || b + c > a || a + c > b)
           {
-          System.out.println("Błąd, dzielenie przez 0");
+            double poleT = ((a+b)/2);
+            System.out.println("Pole Trójkąta prostokątnego:" + poleT);
           }
           else
           {
-          float iloraz = l1 / l2;
-          System.out.println("Iloraz = " + iloraz);
-          }           
-          break;
-      }
-        
-	}
-
+            System.out.println("to nie trójkąt");
+          }
+      }   
+  }          
 }
